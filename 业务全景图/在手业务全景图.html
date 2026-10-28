@@ -1,0 +1,246 @@
+<title>在手业务全景图</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: keynote-style "house" of soft color blocks — roof → 产业 → 场景 → 产品 → 底座, layer pills on the left; collaborator matrix below. No strokes, big radii. */
+:root{
+  --bg:#f3f4f7; --paper:#ffffff; --ink:#141a22; --muted:#66717d; --soft:#e6e9ee;
+  --accent:#3b4656; --accent-soft:#e6e9ee;
+  --harmony:#3b4656; --compute:#3b4656; --cloud:#3b4656;
+  --tint-h:#e8ebef; --tint-c:#e8ebef; --tint-k:#e8ebef; --blk:#dce1e7; --roof:#141a22; --on:#ffffff;
+  --r:22px; --r-s:14px;
+  --f-display:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1318; --paper:#1a2027; --ink:#eef2f6; --muted:#9ba6b2; --soft:#252d36;
+  --accent:#323c4a; --accent-soft:#252d36;
+  --harmony:#9ba6b2; --compute:#9ba6b2; --cloud:#9ba6b2;
+  --tint-h:#1f262e; --tint-c:#1f262e; --tint-k:#1f262e; --blk:#2a323c; --roof:#000000; --on:#ffffff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1318; --paper:#1a2027; --ink:#eef2f6; --muted:#9ba6b2; --soft:#252d36;
+  --accent:#323c4a; --accent-soft:#252d36;
+  --harmony:#9ba6b2; --compute:#9ba6b2; --cloud:#9ba6b2;
+  --tint-h:#1f262e; --tint-c:#1f262e; --tint-k:#1f262e; --blk:#2a323c; --roof:#000000; --on:#ffffff; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:48px 64px}
+.wrap{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+header{display:flex;flex-direction:column;gap:10px}
+header h1{font-family:var(--f-display);font-weight:900;font-size:clamp(30px,4.6vw,48px);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.01em}
+header p{margin:0;color:var(--muted);max-width:56em;font-size:15px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+.house{display:grid;grid-template-columns:72px repeat(3,minmax(0,1fr)) 22px minmax(0,1fr);gap:14px;align-items:stretch}
+.house > .k6{grid-column:6}
+.span2{grid-column:span 2}
+.lab{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.4em;
+  font-weight:700;font-size:13px;color:var(--muted);background:var(--soft);border-radius:999px;padding:14px 0}
+
+.roof{background:var(--roof);color:var(--on);border-radius:var(--r);padding:26px 28px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.roof.dev{grid-column:2 / 5} .roof.cons{grid-column:6}
+.roof h2{font-family:var(--f-display);font-size:clamp(22px,2.8vw,30px);margin:0 0 4px;font-weight:900;letter-spacing:.02em}
+.roof.cons h2{font-size:clamp(20px,2.2vw,26px)}
+.roof p{margin:0;opacity:.75;font-size:13.5px}
+
+.ind{border-radius:var(--r);padding:18px 22px;background:var(--blk);color:var(--ink)}
+.ind b{display:block;font-size:18px;font-weight:700}
+.ind span{color:var(--muted);font-size:13px}
+
+
+.scn{border-radius:var(--r);padding:16px 18px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.scn.h{background:var(--tint-h)} .scn.c{background:var(--tint-c)} .scn.k{background:var(--tint-k)}
+.chip{font-size:13px;padding:5px 12px;border-radius:999px;background:var(--paper);white-space:nowrap;font-weight:500}
+.scn .flow{width:100%;font-size:12px;color:var(--muted);margin-top:4px}
+
+.room{background:var(--paper);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.room h3{margin:0;font-size:21px;line-height:1.25;font-weight:900}
+.room .tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;align-self:flex-start;padding:3px 10px;border-radius:999px}
+.room .tag{color:var(--muted);background:var(--bg)}
+.room .pos{margin:0;font-size:13.5px}
+.room ul{margin:0;padding-left:1.1em;font-size:12.5px;color:var(--muted)}
+.room ul li{margin:2px 0}
+.team{margin:auto 0 0;background:var(--bg);border-radius:var(--r-s);padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px}
+.team dt{color:var(--muted)} .team dd{margin:0;font-weight:700}
+.room a{color:var(--muted);text-decoration:none;font-size:12px}
+.room a:hover{color:var(--ink)}
+.room a:focus-visible,.found a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+.found{border-radius:var(--r);padding:24px 26px;background:var(--accent);color:var(--on);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2fr);gap:22px;align-items:start}
+.found h3{margin:2px 0 0;font-size:24px;font-weight:900}
+.found .tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.found p{margin:6px 0 4px;font-size:13.5px;opacity:.92}
+.found a{color:var(--on);font-size:12px;opacity:.85;text-underline-offset:3px}
+.caps{display:flex;flex-wrap:wrap;gap:8px}
+.found .chip{background:rgba(255,255,255,.18);color:var(--on)}
+.out{font-size:13px;margin-top:12px;opacity:.92}
+.out b{font-weight:700}
+.dep{border-radius:var(--r);padding:22px;background:var(--soft);color:var(--muted);font-size:13px}
+.dep b{color:var(--ink);display:block;font-size:16px;margin-bottom:4px;font-weight:900}
+.ground{display:none}
+
+.matrix h2{font-size:24px;margin:0 0 14px;font-weight:900}
+.tbl{overflow-x:auto;background:var(--paper);border-radius:var(--r);padding:8px 10px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:13.5px}
+th,td{text-align:left;padding:12px 16px;vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+tbody tr:nth-child(odd) td{background:var(--bg)}
+tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{border-radius:0 12px 12px 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:10px;vertical-align:middle}
+.tbd{color:var(--muted);font-style:italic}
+.notes{font-size:12.5px;color:var(--muted);margin:14px 0 0;padding-left:1.1em}
+
+@media (max-width:860px){
+  .house{grid-template-columns:minmax(0,1fr)}
+  .lab{writing-mode:horizontal-tb;justify-content:flex-start;padding:6px 16px;align-self:flex-start;letter-spacing:.2em;margin-top:10px}
+  .roof,.span2,.house > .k6,.roof.dev,.roof.cons,.house > .found{grid-column:auto!important}
+  .house > .k6,.roof.cons{order:1}
+  .roof.cons{margin-top:28px}
+  .found{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Cindy · 业务领域全景 · 2026.10</div>
+    <h1>在手业务全景图</h1>
+    <p>两大板块：开发者工具以「毕方 IDE」为底座，支撑鸿蒙终端、鲲鹏计算两条产业线的 IDE 与工具链；消费者云服务负责云空间网页端。</p>
+  </header>
+
+  <section class="house" aria-label="业务全景房子图">
+    <!-- 屋顶 -->
+    <div class="lab">领域</div>
+    <div class="roof dev">
+      <h2>开发者工具</h2>
+      <p>B 端 · 面向开发者 · 以毕方 IDE 为底座，覆盖鸿蒙终端与鲲鹏计算</p>
+    </div>
+    <div class="roof cons k6">
+      <h2>消费者云服务</h2>
+      <p>C 端 · 面向终端用户</p>
+    </div>
+
+    <!-- 产业 -->
+    <div class="lab">产业</div>
+    <div class="ind h"><b>鸿蒙终端生态</b><span>HarmonyOS 应用与元服务开发者</span></div>
+    <div class="ind c span2"><b>鲲鹏计算产业</b><span>服务器软件开发者、ISV、整机与硬件厂商</span></div>
+    <div class="ind k k6"><b>终端云服务</b><span>使用华为账号的终端消费者</span></div>
+
+    <!-- 场景 -->
+    <div class="lab">场景</div>
+    <div class="scn h">
+      <span class="chip">编码</span><span class="chip">多设备预览</span><span class="chip">构建</span><span class="chip">调试</span><span class="chip">性能分析</span>
+      <span class="flow">一站式应用开发：写 → 看 → 编 → 调 → 优</span>
+    </div>
+    <div class="scn c">
+      <span class="chip">软件迁移</span><span class="chip">应用开发</span><span class="chip">编译调试</span><span class="chip">系统诊断</span><span class="chip">性能调优</span>
+      <span class="flow">x86 → 鲲鹏：快速迁移 → 极简开发 → 全面调优</span>
+    </div>
+    <div class="scn c">
+      <span class="chip">组件建模</span><span class="chip">代码生成</span><span class="chip">构建</span><span class="chip">测试</span><span class="chip">发布</span>
+      <span class="flow">服务器管理固件（BMC）组件开发全流程</span>
+    </div>
+    <div class="scn k k6">
+      <span class="chip">云盘文件</span><span class="chip">图库</span><span class="chip">联系人 / 备忘录</span><span class="chip">查找设备</span>
+      <span class="flow">在电脑浏览器上查看与管理云端数据</span>
+    </div>
+
+    <!-- 产品 -->
+    <div class="lab">产品</div>
+    <article class="room h">
+      <span class="tag">HarmonyOS IDE</span>
+      <h3>DevEco Studio</h3>
+      <p class="pos">鸿蒙应用与元服务的官方集成开发环境。</p>
+      <ul>
+        <li>ArkTS / C++ 智能编辑与跨语言调试</li>
+        <li>双向实时多设备预览</li>
+        <li>Hvigor 构建与 Build Analyzer</li>
+        <li>DevEco Profiler 多场景调优</li>
+      </ul>
+      <dl class="team"><dt>交互</dt><dd>薛楠、安成林</dd><dt>视觉</dt><dd>钱佳丽</dd></dl>
+      <a href="https://developer.huawei.com/consumer/en/deveco-studio/" target="_blank" rel="noopener">官网 ↗</a>
+    </article>
+    <article class="room c">
+      <span class="tag">Kunpeng Toolkit</span>
+      <h3>Kunpeng DevKit</h3>
+      <p class="pos">覆盖软件迁移、应用开发和性能调优的鲲鹏全流程开发工具。</p>
+      <ul>
+        <li>迁移：系统成分分析、迁移评估、源码转换</li>
+        <li>开发与编译调试：编译器工具链、调试器</li>
+        <li>诊断与调优：Kspect、KAT、系统性能分析</li>
+        <li>DevKit AI、灵衢使能</li>
+      </ul>
+      <dl class="team"><dt>视觉</dt><dd>王研娟</dd></dl>
+      <a href="https://www.hikunpeng.com/cn/developer/devkit" target="_blank" rel="noopener">官网 ↗</a>
+    </article>
+    <article class="room c">
+      <span class="tag">BMC Firmware IDE</span>
+      <h3>openUBMC Studio</h3>
+      <p class="pos">openUBMC 开源服务器管理软件的开发工具链。</p>
+      <ul>
+        <li>模型驱动：定义组件模型，生成接口代码</li>
+        <li>统一 CLI（bingo）完成构建、测试、发布</li>
+        <li>屏蔽 Conan / CMake 细节，规范组件开发</li>
+      </ul>
+      <dl class="team"><dt>协作</dt><dd>庄芷苡</dd><dt>视觉</dt><dd>王研娟</dd></dl>
+      <a href="https://www.openubmc.cn/zh/marketplace/openUBMC%20Studio" target="_blank" rel="noopener">官网 ↗</a>
+    </article>
+    <article class="room k k6">
+      <span class="tag">Consumer Web</span>
+      <h3>云空间网页端</h3>
+      <p class="pos">华为云空间在浏览器上的入口，管理多设备同步的数据。</p>
+      <ul>
+        <li>云盘文件查看、编辑与管理</li>
+        <li>图库、联系人、备忘录等同步数据</li>
+        <li>查找设备：定位、响铃、丢失模式</li>
+      </ul>
+      <dl class="team"><dt>交互</dt><dd>薛楠、周海</dd><dt>视觉</dt><dd>葛华全</dd></dl>
+      <a href="https://consumer.huawei.com/cn/mobileservices/mobilecloud/" target="_blank" rel="noopener">官网 ↗</a>
+    </article>
+
+    <!-- 底座 -->
+    <div class="lab">底座</div>
+    <div class="found" style="grid-column:span 3">
+      <div>
+        <span class="tag">IDE Foundation · 对接软件 IDE 实验室</span>
+        <h3>毕方 IDE（BitFun）</h3>
+        <p>开源的 AI Agent 开发环境，作为 IDE 底座能力孵化，再商业转化到 DevEco Studio 等工具。</p>
+        <a href="https://openbitfun.com/" target="_blank" rel="noopener">openbitfun.com ↗</a>
+      </div>
+      <div>
+        <div class="caps">
+          <span class="chip">Agentic 模式</span><span class="chip">Plan 模式</span><span class="chip">Debug 模式</span><span class="chip">Review 模式</span>
+          <span class="chip">MCP / Skills 扩展</span><span class="chip">自定义 Agent</span><span class="chip">本地 + 云端模型</span><span class="chip">跨设备控制</span><span class="chip">Rust 高性能运行时</span>
+        </div>
+        <p class="out"><b>能力输出 ↑</b> AI 协同编码、调试与评审范式，沉淀为共用的 IDE 体验组件，供上层开发工具复用。</p>
+      </div>
+    </div>
+    <div class="dep k6">
+      <b>终端云服务平台</b>
+      云存储、多设备同步、华为账号。属于业务依赖。
+    </div>
+    <div class="ground dev" aria-hidden="true"></div>
+    <div class="ground cons k6" aria-hidden="true"></div>
+  </section>
+
+  <section class="matrix">
+    <h2>协作人矩阵</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>项目</th><th>产业</th><th>层级</th><th>交互</th><th>视觉</th></tr></thead>
+        <tbody>
+          <tr><td><span class="dot" style="background:var(--harmony)"></span>DevEco Studio</td><td>鸿蒙终端</td><td>产品</td><td>薛楠、安成林</td><td>钱佳丽</td></tr>
+          <tr><td><span class="dot" style="background:var(--compute)"></span>Kunpeng DevKit</td><td>鲲鹏计算</td><td>产品</td><td class="tbd">待补充</td><td>王研娟</td></tr>
+          <tr><td><span class="dot" style="background:var(--compute)"></span>openUBMC Studio</td><td>鲲鹏计算</td><td>产品</td><td>庄芷苡（协作）</td><td>王研娟</td></tr>
+          <tr><td><span class="dot" style="background:var(--cloud)"></span>云空间网页端</td><td>终端云服务</td><td>产品</td><td>薛楠、周海</td><td>葛华全</td></tr>
+          <tr><td><span class="dot" style="background:var(--accent)"></span>毕方 IDE</td><td>跨产业</td><td>底座</td><td colspan="2">对接：软件 IDE 实验室<span class="tbd">（设计协作人待补充）</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="notes">
+      <li>王研娟同时负责 Kunpeng DevKit 与 openUBMC Studio 视觉；薛楠同时负责 DevEco Studio 与云空间网页端交互。</li>
+      <li>产品能力摘自各官网公开信息；openUBMC Studio 官网页面无正文，能力取自 openUBMC 开发者文档中对 BMC Studio 的描述。</li>
+    </ul>
+  </section>
+</div>
