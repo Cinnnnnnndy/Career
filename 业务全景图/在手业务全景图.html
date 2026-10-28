@@ -38,14 +38,15 @@ header h1{font-family:var(--f-display);font-weight:900;font-size:clamp(30px,4.6v
 header p{margin:0;color:var(--muted);max-width:56em;font-size:15px}
 .eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
-.house{display:grid;grid-template-columns:72px repeat(3,minmax(0,1fr)) 22px minmax(0,1fr);gap:14px;align-items:stretch}
-.house > .k6{grid-column:6}
+.house{display:grid;grid-template-columns:72px repeat(4,minmax(0,1fr)) 22px minmax(0,1fr);gap:14px;align-items:stretch}
+.house > .k6{grid-column:7}
+.span3{grid-column:span 3}
 .span2{grid-column:span 2}
 .lab{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;letter-spacing:.4em;
   font-weight:700;font-size:13px;color:var(--muted);background:var(--soft);border-radius:999px;padding:14px 0}
 
 .roof{background:var(--roof);color:var(--on);border-radius:var(--r);padding:26px 28px;text-align:center;display:flex;flex-direction:column;justify-content:center}
-.roof.dev{grid-column:2 / 5} .roof.cons{grid-column:6}
+.roof.dev{grid-column:2 / 6} .roof.cons{grid-column:7}
 .roof h2{font-family:var(--f-display);font-size:clamp(22px,2.8vw,30px);margin:0 0 4px;font-weight:900;letter-spacing:.02em}
 .roof.cons h2{font-size:clamp(20px,2.2vw,26px)}
 .roof p{margin:0;opacity:.75;font-size:13.5px}
@@ -64,6 +65,7 @@ header p{margin:0;color:var(--muted);max-width:56em;font-size:15px}
 .room h3{margin:0;font-size:21px;line-height:1.25;font-weight:900}
 .room .tag{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;align-self:flex-start;padding:3px 10px;border-radius:999px}
 .room .tag{color:var(--muted);background:var(--bg)}
+.room.explore{background:transparent;border:2px dashed var(--blk)}
 .room .pos{margin:0;font-size:13.5px}
 .room ul{margin:0;padding-left:1.1em;font-size:12.5px;color:var(--muted)}
 .room ul li{margin:2px 0}
@@ -100,7 +102,7 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
 @media (max-width:860px){
   .house{grid-template-columns:minmax(0,1fr)}
   .lab{writing-mode:horizontal-tb;justify-content:flex-start;padding:6px 16px;align-self:flex-start;letter-spacing:.2em;margin-top:10px}
-  .roof,.span2,.house > .k6,.roof.dev,.roof.cons,.house > .found{grid-column:auto!important}
+  .roof,.span2,.span3,.house > .k6,.roof.dev,.roof.cons,.house > .found{grid-column:auto!important}
   .house > .k6,.roof.cons{order:1}
   .roof.cons{margin-top:28px}
   .found{grid-template-columns:minmax(0,1fr)}
@@ -113,7 +115,7 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
   <header>
     <div class="eyebrow">Cindy · 业务领域全景 · 2026.10</div>
     <h1>在手业务全景图</h1>
-    <p>两大板块：开发者工具以「毕方 IDE」为底座，支撑鸿蒙终端、计算两条产业线的 IDE 与工具链；消费者云服务负责云空间网页端。</p>
+    <p>两大板块：开发者工具以「毕方 IDE」为底座，支撑鸿蒙终端、计算两条产业线的 IDE 与工具链，并探索昇腾训练推理可视化；消费者云服务负责云空间网页端。</p>
   </header>
 
   <section class="house" aria-label="业务全景房子图">
@@ -131,7 +133,7 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
     <!-- 产业 -->
     <div class="lab">产业</div>
     <div class="ind h"><b>鸿蒙终端生态</b><span>HarmonyOS 应用与元服务开发者</span></div>
-    <div class="ind c span2"><b>计算产业</b><span>服务器软件开发者、ISV、整机与硬件厂商</span></div>
+    <div class="ind c span3"><b>计算产业</b><span>服务器软件开发者、ISV、硬件厂商、AI 开发者</span></div>
     <div class="ind k k6"><b>终端云服务</b><span>使用华为账号的终端消费者</span></div>
 
     <!-- 场景 -->
@@ -147,6 +149,10 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
     <div class="scn c">
       <span class="chip">组件建模</span><span class="chip">代码生成</span><span class="chip">构建</span><span class="chip">测试</span><span class="chip">发布</span>
       <span class="flow">服务器管理固件（BMC）组件开发全流程</span>
+    </div>
+    <div class="scn c">
+      <span class="chip">模型训练</span><span class="chip">模型推理</span><span class="chip">过程可视化</span>
+      <span class="flow">昇腾 AI 训练 / 推理过程的可视化呈现</span>
     </div>
     <div class="scn k k6">
       <span class="chip">云盘文件</span><span class="chip">图库</span><span class="chip">联系人 / 备忘录</span><span class="chip">查找设备</span>
@@ -193,6 +199,12 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
       <dl class="team"><dt>协作</dt><dd>庄芷苡</dd><dt>视觉</dt><dd>王研娟</dd></dl>
       <a href="https://www.openubmc.cn/zh/marketplace/openUBMC%20Studio" target="_blank" rel="noopener">官网 ↗</a>
     </article>
+    <article class="room c explore">
+      <span class="tag">Ascend · 探索</span>
+      <h3>昇腾训练推理可视化</h3>
+      <p class="pos">昇腾模型训练、推理场景的可视化设计探索。</p>
+      <dl class="team"><dt>协同</dt><dd>吴章鸿、尹昱程</dd></dl>
+    </article>
     <article class="room k k6">
       <span class="tag">Consumer Web</span>
       <h3>云空间网页端</h3>
@@ -208,7 +220,7 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
 
     <!-- 底座 -->
     <div class="lab">底座</div>
-    <div class="found" style="grid-column:span 3">
+    <div class="found" style="grid-column:span 4">
       <div>
         <span class="tag">IDE Foundation · 对接软件 IDE 实验室</span>
         <h3>毕方 IDE（BitFun）</h3>
@@ -240,6 +252,7 @@ tbody tr td:first-child{border-radius:12px 0 0 12px} tbody tr td:last-child{bord
           <tr><td><span class="dot" style="background:var(--harmony)"></span>DevEco Studio</td><td>鸿蒙终端</td><td>产品</td><td>薛楠、安成林</td><td>钱佳丽</td></tr>
           <tr><td><span class="dot" style="background:var(--compute)"></span>Kunpeng DevKit</td><td>计算产业</td><td>产品</td><td class="tbd">待补充</td><td>王研娟</td></tr>
           <tr><td><span class="dot" style="background:var(--compute)"></span>openUBMC Studio</td><td>计算产业</td><td>产品</td><td>庄芷苡（协作）</td><td>王研娟</td></tr>
+          <tr><td><span class="dot" style="background:var(--compute)"></span>昇腾训练推理可视化</td><td>计算产业</td><td>探索</td><td colspan="2">协同：吴章鸿、尹昱程</td></tr>
           <tr><td><span class="dot" style="background:var(--cloud)"></span>云空间网页端</td><td>终端云服务</td><td>产品</td><td>薛楠、周海</td><td>葛华全</td></tr>
           <tr><td><span class="dot" style="background:var(--accent)"></span>毕方 IDE</td><td>跨产业</td><td>底座</td><td colspan="2">对接：软件 IDE 实验室<span class="tbd">（设计协作人待补充）</span></td></tr>
         </tbody>

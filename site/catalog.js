@@ -21,12 +21,12 @@ window.WORK_CATALOG = {
       items: [
         {
           title: '在手业务全景图',
-          desc: '按领域、产业、场景、产品、底座分层，梳理开发者工具（DevEco Studio、Kunpeng DevKit、openUBMC Studio、毕方 IDE）与消费者云服务（云空间网页端），并列出各项目交互 / 视觉协作人。',
+          desc: '按领域、产业、场景、产品、底座分层，梳理开发者工具（DevEco Studio、Kunpeng DevKit、openUBMC Studio、毕方 IDE）、昇腾训练推理可视化探索与消费者云服务（云空间网页端），并列出各项目交互 / 视觉协作人。',
           view: 'ready',
           date: '2026-10-28',
           href: '业务全景图/在手业务全景图.html',
           links: [{ label: '在线版（Claude）', href: 'https://claude.ai/artifact/RZBitR8MXpEjfHrHpQ5Gnq' }],
-          tags: ['全景图', 'DevEco Studio', 'Kunpeng DevKit', 'openUBMC Studio', '毕方 IDE', '云空间', '协作人'],
+          tags: ['全景图', 'DevEco Studio', 'Kunpeng DevKit', 'openUBMC Studio', '毕方 IDE', '云空间', '昇腾', '协作人'],
           thumb: { type: 'image', src: 'site/thumbs/domain-map.jpg' }
         }
       ]

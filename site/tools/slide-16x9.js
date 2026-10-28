@@ -4,7 +4,7 @@ const CSS=`
 html,body{width:1920px;height:1080px;overflow:hidden;margin:0;padding:0!important}
 .wrap{max-width:none;width:1920px;padding:40px 64px;box-sizing:border-box;gap:28px;height:1080px;justify-content:center}
 header h1{font-size:44px}
-.house{grid-template-columns:76px repeat(3,minmax(0,1fr)) 24px minmax(0,1fr);gap:14px}
+.house{grid-template-columns:76px repeat(4,minmax(0,1fr)) 24px minmax(0,1fr);gap:14px}
 .lab{font-size:24px;letter-spacing:.3em}
 .roof{padding:16px 28px}
 .roof h2{font-size:36px!important;margin:0}
@@ -15,7 +15,7 @@ header h1{font-size:44px}
 .scn{padding:14px 16px;gap:8px}
 .chip{font-size:24px;padding:2px 12px;line-height:1.4}
 .room{padding:18px 22px;gap:10px}
-.room h3{font-size:32px}
+.room h3{font-size:30px;line-height:1.2}
 .room .pos{font-size:24px;line-height:1.45}
 .team{font-size:24px;padding:8px 14px;gap:2px 12px;line-height:1.45}
 .found{padding:18px 26px;gap:24px;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr)}
@@ -37,10 +37,10 @@ await p.evaluate(()=>{const keep=['Agentic 模式','Plan 模式','Debug 模式',
 });
 await p.evaluate(()=>{
  const T=(sel,txt)=>{const e=document.querySelector(sel); if(e) e.textContent=txt;};
- const inds=document.querySelectorAll('.ind span'); ['HarmonyOS 开发者','服务器软件开发者、ISV、硬件厂商','华为终端用户'].forEach((t,i)=>inds[i]&&(inds[i].textContent=t));
- const sc=[['编码','预览','构建','调试','调优'],['迁移','开发','编译调试','诊断','调优'],['建模','代码生成','构建','测试','发布'],['云盘','图库','联系人','查找设备']];
+ const inds=document.querySelectorAll('.ind span'); ['HarmonyOS 开发者','服务器 / AI 开发者、ISV、硬件厂商','华为终端用户'].forEach((t,i)=>inds[i]&&(inds[i].textContent=t));
+ const sc=[['编码','预览','构建','调试','调优'],['迁移','开发','编译调试','诊断','调优'],['建模','代码生成','构建','测试','发布'],['训练','推理','可视化'],['云盘','图库','联系人','查找设备']];
  document.querySelectorAll('.scn').forEach((el,i)=>{el.innerHTML=sc[i].map(t=>'<span class="chip">'+t+'</span>').join('')});
- const pos=['鸿蒙应用与元服务官方 IDE','鲲鹏全流程开发工具','BMC 固件组件开发工具链','云空间的浏览器入口'];
+ const pos=['鸿蒙应用官方 IDE','鲲鹏全流程开发工具','BMC 固件组件开发工具链','探索 · 训练推理场景可视化','云空间的浏览器入口'];
  document.querySelectorAll('.room .pos').forEach((e,i)=>e.textContent=pos[i]);
  const d=document.querySelector('.dep'); d.innerHTML='<b>终端云服务平台</b><span>云存储 · 多设备同步</span>';
 });
