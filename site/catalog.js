@@ -35,6 +35,15 @@ window.WORK_CATALOG = {
       id: 'method', title: '方法与 Skill', icon: 'i-cat-book',
       items: [
         {
+          title: '高老师视角材料审视 skill',
+          desc: '以三层领导高老师视角预审汇报 PPT、设计方案、用研报告和 UX 目标：七个维度逐条挑问题、模拟领导追问、给可直接执行的修改建议，并按材料类型调整侧重。',
+          view: 'doc',
+          date: '2026-10-29',
+          href: 'skills/gao-review/SKILL.md',
+          links: [{ label: '说明', href: 'skills/README.md' }],
+          tags: ['高老师', '材料审视', '汇报', 'Why What How', '病药效', 'Top3', '用研报告', 'skill']
+        },
+        {
           title: 'UX 设计目标制定 skill',
           desc: '提炼自 2026 UX 设计项目目标研讨会的评委点评与各项目改写：五段链路方法论、14 条原则、按 To B/C/D 与项目性质切换的写法、语料模板、自检清单和脱敏范例。',
           view: 'doc',
