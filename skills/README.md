@@ -5,6 +5,7 @@
 | UX 设计目标制定 | 撰写、诊断、改写 UX 设计项目目标；按 To B / To C / To D 与首版本、改版、迭代、创新、AI 等场景切换写法 | [ux-goal-setting/SKILL.md](ux-goal-setting/SKILL.md) |
 | 高老师视角材料审视 | 以三层领导高老师视角审视汇报 PPT、设计方案、用研报告、UX 目标/项目规划：七个维度逐条挑问题、模拟领导追问、给修改建议，按材料类型调整侧重 | [gao-review/SKILL.md](gao-review/SKILL.md) |
 | 规划汇报材料写作 | 写、诊断或改年度/版本规划汇报 deck：经典八段骨架、每部分写法、推导方法、预判追问，交稿前用高老师视角检查 | [planning-deck-craft/SKILL.md](planning-deck-craft/SKILL.md) |
+| Keynote 改稿 | 精修、对齐、补页 Keynote 汇报材料：安全护栏、视觉规范 token、内容表达原则、每部分写法、全篇对齐巡检、AppleScript 自动化技巧、原生形状重建页面、交稿前检查 | [keynote-deck-polish/SKILL.md](keynote-deck-polish/SKILL.md) |
 
 ## UX 设计目标制定（ux-goal-setting）
 
@@ -49,3 +50,22 @@
 
 使用：在 Claude 里保存为 skill 后，说“帮我搭一份 xx 规划汇报的骨架”或“按规划汇报的写法帮我改这一部分”；交稿前说“按交稿前检查过一遍”。
 
+## Keynote 改稿（keynote-deck-polish）
+
+来源：一份年度体验规划汇报材料的完整改稿过程（多轮反馈、全篇对齐、补新页、导出改名），以及当天的领导评审意见。只保留框架和技巧，不含业务内容。
+
+内容结构：
+
+1. 安全护栏：改前备份、检查未保存编辑、不删只移（画布外 / 跳过）、按标题找页、每项保存并汇报、最后改名
+2. 视觉规范 token：边距、眉题 / 标题 / 副标题位置、卡片圆角与间距、胶囊、最小 16pt；颜色按含义用；不要装饰竖条、文本框描边、空框、元说明
+3. 内容表达原则：未定的事不暗示已定、整组一致的标签提到上一级、临时标签统一样式、不编数据、备注与页面一致
+4. 每一部分的写法（references/section-writing.md）：叙事线、标题体系、各部分版式与句子写法
+5. 全篇对齐巡检：导出前图 → 几何普查 → 自动找差 1–4px 的问题 → 分类修 → 字号放大后查截断 → 导出后图与总览对比
+6. Keynote AppleScript 的坑（references/applescript-gotchas.md）和 7 个可复用脚本
+7. 原生形状重建页面：python-pptx 按 pt 建页 → Keynote 打开 → 菜单全选 / 拷贝 / 粘贴进目标页
+8. 交稿前检查（references/final-review-checklist.md）：五条硬标准、篇幅结构、追问、细节
+9. 汇报节奏
+
+与 planning-deck-craft 的分工：写什么、怎么搭骨架看 planning-deck-craft；在 Keynote 文件里怎么安全地改、对齐和补页，看本 skill。
+
+使用：在 Claude Code 里放到 `~/.claude/skills/keynote-deck-polish/`，然后说“把这份材料整体对齐一下”“按反馈改第 N 页”“把这张图做成原生形状放到某页后面”。

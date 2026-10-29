@@ -25,7 +25,7 @@ window.WORK_CATALOG = {
           view: 'ready',
           date: '2026-10-28',
           href: '业务全景图/在手业务全景图.html',
-          links: [{ label: '在线版（Claude）', href: 'https://claude.ai/artifact/RZBitR8MXpEjfHrHpQ5Gnq' }],
+          links: [{ label: '在线版（Claude）', href: 'https://claude.ai/artifact/RZBitR8MXpEjfHrHpQ5Gnq' }, { label: '原生形状 PPTX', href: '业务全景图/在手业务全景图-原生形状.pptx' }],
           tags: ['全景图', 'DevEco Studio', 'Kunpeng DevKit', 'openUBMC Studio', '毕方 IDE', '云空间', '昇腾', '协作人'],
           thumb: { type: 'image', src: 'site/thumbs/domain-map.jpg' }
         }
@@ -42,6 +42,15 @@ window.WORK_CATALOG = {
           href: 'skills/planning-deck-craft/SKILL.md',
           links: [{ label: '说明', href: 'skills/README.md' }],
           tags: ['规划汇报', 'deck', '骨架', '病药效', 'Top3', '交稿前检查', 'skill']
+        },
+        {
+          title: 'Keynote 改稿 skill',
+          desc: '在 Keynote 里安全地精修汇报材料：改前备份与检查、视觉规范 token、每部分写法、全篇对齐巡检脚本、AppleScript 技巧、用原生形状重建页面，以及按领导审视的交稿前检查。',
+          view: 'doc',
+          date: '2026-10-29',
+          href: 'skills/keynote-deck-polish/SKILL.md',
+          links: [{ label: '说明', href: 'skills/README.md' }],
+          tags: ['Keynote', '改稿', '对齐', 'AppleScript', '原生形状', '交稿前检查', 'skill']
         },
         {
           title: '高老师视角材料审视 skill',
