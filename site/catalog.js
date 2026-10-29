@@ -35,6 +35,15 @@ window.WORK_CATALOG = {
       id: 'method', title: '方法与 Skill', icon: 'i-cat-book',
       items: [
         {
+          title: '规划汇报材料写作 skill',
+          desc: '从 DevEco 体验规划汇报提炼的写法：经典八段骨架（概览、背景、用户、竞品、策略、已落地、规划、目标、收尾）、每部分怎么写、推导方法与预判追问，交稿前用高老师视角检查。',
+          view: 'doc',
+          date: '2026-10-29',
+          href: 'skills/planning-deck-craft/SKILL.md',
+          links: [{ label: '说明', href: 'skills/README.md' }],
+          tags: ['规划汇报', 'deck', '骨架', '病药效', 'Top3', '交稿前检查', 'skill']
+        },
+        {
           title: '高老师视角材料审视 skill',
           desc: '以三层领导高老师视角预审汇报 PPT、设计方案、用研报告和 UX 目标：七个维度逐条挑问题、模拟领导追问、给可直接执行的修改建议，并按材料类型调整侧重。',
           view: 'doc',
