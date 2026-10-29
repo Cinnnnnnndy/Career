@@ -13,7 +13,7 @@
      thumb    {type:'image', src:'site/thumbs/xxx.jpg'} 截图（1280×640）
    ===================================================================== */
 window.WORK_CATALOG = {
-  updated: '2026-10-28',
+  updated: '2026-10-29',
   title: '工作梳理',
   groups: [
     {
@@ -28,6 +28,20 @@ window.WORK_CATALOG = {
           links: [{ label: '在线版（Claude）', href: 'https://claude.ai/artifact/RZBitR8MXpEjfHrHpQ5Gnq' }],
           tags: ['全景图', 'DevEco Studio', 'Kunpeng DevKit', 'openUBMC Studio', '毕方 IDE', '云空间', '昇腾', '协作人'],
           thumb: { type: 'image', src: 'site/thumbs/domain-map.jpg' }
+        }
+      ]
+    },
+    {
+      id: 'method', title: '方法与 Skill', icon: 'i-cat-book',
+      items: [
+        {
+          title: 'UX 设计目标制定 skill',
+          desc: '提炼自 2026 UX 设计项目目标研讨会的评委点评与各项目改写：五段链路方法论、14 条原则、按 To B/C/D 与项目性质切换的写法、语料模板、自检清单和脱敏范例。',
+          view: 'doc',
+          date: '2026-10-29',
+          href: 'skills/ux-goal-setting/SKILL.md',
+          links: [{ label: '说明', href: 'skills/README.md' }],
+          tags: ['UX 目标', 'SMART', 'NSS', '设计策略', 'skill', '研讨会']
         }
       ]
     }
