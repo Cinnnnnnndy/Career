@@ -6,6 +6,8 @@
 | 高老师视角材料审视 | 以三层领导高老师视角审视汇报 PPT、设计方案、用研报告、UX 目标/项目规划：七个维度逐条挑问题、模拟领导追问、给修改建议，按材料类型调整侧重 | [gao-review/SKILL.md](gao-review/SKILL.md) |
 | 规划汇报材料写作 | 写、诊断或改年度/版本规划汇报 deck：经典八段骨架、每部分写法、推导方法、预判追问，交稿前用高老师视角检查 | [planning-deck-craft/SKILL.md](planning-deck-craft/SKILL.md) |
 | Keynote 改稿 | 精修、对齐、补页 Keynote 汇报材料：安全护栏、视觉规范 token、内容表达原则、每部分写法、全篇对齐巡检、AppleScript 自动化技巧、原生形状重建页面、交稿前检查 | [keynote-deck-polish/SKILL.md](keynote-deck-polish/SKILL.md) |
+| 竞品分析 | 规划 → 搜集 → 洞察 → 可视化的全流程竞品分析；视角（UX/PM/UI/Tech/Strategy）显性确认后贯穿全程；交付楼层滚动 HTML 深度报告或横向翻页演讲 PPT（内置 guizang-ppt-skill） | [competitive-analysis/SKILL.md](competitive-analysis/SKILL.md) |
+| 竞品分析（bufan 版） | 同一套四阶段流程的早期版本：专家视角按需切换、图文搜集与下钻的人机互动规则更细；只输出 HTML 楼层报告，附 figma-d2c 示例素材与报告 | [competitive-analysis-bufan/SKILL.md](competitive-analysis-bufan/SKILL.md) |
 
 ## UX 设计目标制定（ux-goal-setting）
 
@@ -69,3 +71,26 @@
 与 planning-deck-craft 的分工：写什么、怎么搭骨架看 planning-deck-craft；在 Keynote 文件里怎么安全地改、对齐和补页，看本 skill。
 
 使用：在 Claude Code 里放到 `~/.claude/skills/keynote-deck-polish/`，然后说“把这份材料整体对齐一下”“按反馈改第 N 页”“把这张图做成原生形状放到某页后面”。
+
+## 竞品分析（competitive-analysis）
+
+来源：AnalysisSKILLS 仓库（SchihHsin/AnalysisSKILLS）。
+
+内容结构：
+
+1. 四阶段流水线：Stage 1 规划 → Stage 2 搜集 → Stage 3 分析（Markdown 报告）→ Stage 4 可视化（可选）
+2. 分析视角在 Stage 1 显性确认（UX / PM / UI / Tech / Strategy），之后的维度、骨架类型、对比表行维度都跟随视角预设
+3. 意图路由：new / continue（恢复中断或增量 diff 更新）/ visualize / query / fast（快速模式）
+4. Human-in-the-Loop 检查点、进度汇报格式、每次回答末尾的当前阶段信息
+5. 搜集规则：图文对照、多模态视觉核查截图、截图视觉解析写入 visual-analysis.md、事实标注
+6. 洞察闭环（证据 / 分析 / 建议），写完整报告前先确认 3 条洞察方向
+7. 可视化两种形态：楼层滚动 HTML 深度报告，或委派 references/guizang-ppt-skill 生成横向翻页演讲 PPT（电子杂志风 / 瑞士风）
+8. references/：搜集方法论、分析框架、可视化框架、事实核查协议、报告与跟踪表模板、示例对话；GUIDE.md 为用户使用说明
+
+使用：在 Claude Code 里放到 `~/.claude/skills/competitive-analysis/`，然后说“帮我做一份 xx 的竞品分析”，或 `/competitive-analysis fast A vs B`；分析完成后说“做成 PPT”或“生成 HTML 报告”。
+
+## 竞品分析 bufan 版（competitive-analysis-bufan）
+
+来源：同一仓库的早期版本。与主版本的区别：专家视角按需切换而非 Stage 1 显性确认；Stage 1 分四步（目标 → 范围 → 维度 → 规划）；Stage 2 有更细的图文下钻人机互动规则（预期管理、逐链接汇报、失败可感知、素材质量确认）和 YouTube / 浏览器截图流程；Stage 4 只做 HTML 楼层报告。目录内附 figma-d2c 的示例素材（materials/）、跟踪表（tracking/）和报告（reports/）。
+
+使用：放到 `~/.claude/skills/competitive-analysis-bufan/`。两个版本同时安装时，说“用 bufan 版做竞品分析”来指定。

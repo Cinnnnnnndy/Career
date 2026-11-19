@@ -9,6 +9,7 @@
 | 规划汇报材料写作 skill | [skills/planning-deck-craft/SKILL.md](skills/planning-deck-craft/SKILL.md)，说明见 [skills/README.md](skills/README.md) | — |
 | Keynote 改稿 skill | [skills/keynote-deck-polish/SKILL.md](skills/keynote-deck-polish/SKILL.md)，说明见 [skills/README.md](skills/README.md)；在手业务全景图另有原生形状可编辑版 [PPTX](业务全景图/在手业务全景图-原生形状.pptx) | — |
 | UX 设计目标制定 skill | [skills/ux-goal-setting/SKILL.md](skills/ux-goal-setting/SKILL.md)，说明见 [skills/README.md](skills/README.md) | — |
+| 竞品分析 skill | [skills/competitive-analysis/SKILL.md](skills/competitive-analysis/SKILL.md)（bufan 版：[skills/competitive-analysis-bufan/SKILL.md](skills/competitive-analysis-bufan/SKILL.md)），说明见 [skills/README.md](skills/README.md) | — |
 | 更新日志（每日对话整理） | [更新日志/](更新日志/README.md) | — |
 
 新增内容：放进对应子目录，截图存 `site/thumbs/`，再在 `site/catalog.js` 里加一条。

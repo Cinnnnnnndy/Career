@@ -69,6 +69,19 @@ window.WORK_CATALOG = {
           href: 'skills/ux-goal-setting/SKILL.md',
           links: [{ label: '说明', href: 'skills/README.md' }],
           tags: ['UX 目标', 'SMART', 'NSS', '设计策略', 'skill', '研讨会']
+        },
+        {
+          title: '竞品分析 skill',
+          desc: '规划、搜集、洞察、可视化的全流程竞品分析：视角显性确认后贯穿全程，截图视觉核查与事实标注，洞察闭环，交付楼层滚动 HTML 深度报告或横向翻页演讲 PPT。附 bufan 早期版本。',
+          view: 'doc',
+          date: '2026-11-18',
+          href: 'skills/competitive-analysis/SKILL.md',
+          links: [
+            { label: '说明', href: 'skills/README.md' },
+            { label: '使用指南', href: 'skills/competitive-analysis/GUIDE.md' },
+            { label: 'bufan 版', href: 'skills/competitive-analysis-bufan/SKILL.md' }
+          ],
+          tags: ['竞品分析', '用户旅程', 'SWOT', '可视化报告', 'PPT', 'skill']
         }
       ]
     }
